@@ -1,0 +1,76 @@
+# Git Repository Setup and Conflict Resolution Guide
+
+## 1. Initial Setup
+# Create a New Directory
+mkdir sample-node-project
+cd sample-node-project
+
+# Initialize a Git Repository
+git init
+
+# Add Remote Repository
+git remote add origin https://github.com/Sameerq7/sample-node-project.git
+
+# Create a .gitignore File (Optional)
+echo "node_modules/" > .gitignore
+
+# Create and Switch to a New Branch (Optional)
+git checkout -b main
+
+# Add Files and Commit
+echo "Sample Node.js Project" > README.md
+npm init -y
+git add .
+git commit -m "Initial commit"
+
+# Push to Remote Repository
+git push -u origin main
+
+## 2. Handling Branch Issues
+# List Branches
+git branch
+
+# Switch to the Correct Branch (if needed)
+git checkout main
+
+# Set Upstream Branch (if needed)
+git branch --set-upstream-to=origin/main
+
+## 3. Pulling Changes and Resolving Conflicts
+# Fetch Changes from Remote
+git fetch origin
+
+# Merge Remote Branch (Allow Unrelated Histories If Needed)
+git merge origin/main --allow-unrelated-histories
+
+# If you encounter conflicts:
+# Open Conflicting Files and Resolve Conflicts
+# Use a text editor or IDE to manually resolve the conflicts
+
+# Stage Resolved Files
+git add <file-name>
+
+# Complete the Merge
+git commit
+
+# Alternatively, Rebase Instead of Merge (if applicable)
+git pull origin main --rebase --allow-unrelated-histories
+
+# Push Changes After Resolving Conflicts
+git push -u origin main
+
+## 4. Additional Commands
+# Check Branch Status
+git status
+
+# List Branches
+git branch
+
+# View Remote Branches
+git branch -r
+
+# View Commit History
+git log
+
+# Force Push (Use with Caution)
+git push -u origin main --force
