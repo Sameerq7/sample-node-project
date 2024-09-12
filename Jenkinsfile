@@ -3,26 +3,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                script {
-                    echo 'Building...'
-                    bat 'npm install'  // Install dependencies on Windows
-                }
+                echo 'Building...'
+                // Add build commands here
             }
         }
         stage('Test') {
             steps {
-                script {
-                    echo 'Testing...'
-                    bat 'npm test'  // Run tests on Windows
-                }
+                echo 'Testing...'
+                // Add test commands here
             }
         }
         stage('Deploy') {
             steps {
-                script {
-                    echo 'Deploying...'
-                    // Add Windows deployment commands here
-                }
+                echo 'Deploying...'
+                // Add deploy commands here
             }
         }
     }
