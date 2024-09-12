@@ -3,20 +3,26 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'
-                // Add build commands here
+                script {
+                    echo 'Building...'
+                    sh 'npm install'  // Install dependencies
+                }
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing...'
-                // Add test commands here
+                script {
+                    echo 'Testing...'
+                    sh 'npm test'  // Run tests
+                }
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying...'
-                // Add deploy commands here
+                script {
+                    echo 'Deploying...'
+                    // Add deployment commands here
+                }
             }
         }
     }
