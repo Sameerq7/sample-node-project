@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     echo 'Building...'
-                    sh 'npm install'  // Install dependencies
+                    bat 'npm install'  // Install dependencies on Windows
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     echo 'Testing...'
-                    sh 'npm test'  // Run tests
+                    bat 'npm test'  // Run tests on Windows
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     echo 'Deploying...'
-                    // Add deployment commands here
+                    // Add Windows deployment commands here
                 }
             }
         }
